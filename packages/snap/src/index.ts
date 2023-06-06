@@ -11,10 +11,10 @@ import { panel, text } from '@metamask/snaps-ui';
  * @returns The result of `snap_dialog`.
  * @throws If the request method is not valid for this snap.
  */
-export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => {
   switch (request.method) {
     case 'hello':
-      return snap.request({
+      return await snap.request({
         method: 'snap_dialog',
         params: {
           type: 'confirmation',
@@ -27,6 +27,8 @@ export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
           ]),
         },
       });
+    case 'fil_getAddress':
+      return "gggg1234567";
     default:
       throw new Error('Method not found.');
   }

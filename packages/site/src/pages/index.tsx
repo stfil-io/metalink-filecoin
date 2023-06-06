@@ -14,6 +14,7 @@ import {
   SendHelloButton,
   Card,
 } from '../components';
+import { initiateFilecoinSnap } from '../services/metamask';
 
 const Container = styled.div`
   display: flex;
@@ -104,7 +105,9 @@ const Index = () => {
 
   const handleConnectClick = async () => {
     try {
-      await connectSnap();
+      // await connectSnap();
+      const installResult = await initiateFilecoinSnap()
+      console.log("initiateFilecoinSnap result: ", installResult)
       const installedSnap = await getSnap();
 
       dispatch({
