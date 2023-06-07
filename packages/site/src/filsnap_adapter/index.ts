@@ -50,24 +50,22 @@ export async function enableFilecoinSnap(
 
   const isInstalled = await isSnapInstalled(snapId);
 
-  // if (!isInstalled) {
-    // // enable snap
+  if (!isInstalled) {
+    // enable snap
     await window.ethereum.request({
       method: "wallet_requestSnaps",
       params: {
         [snapId]: { ...snapInstallationParams },
       },
     });
-  // }
+  }
 
   //await unlockMetamask();
 
   // create snap describer
   const snap = new MetamaskFilecoinSnap(snapOrigin || defaultSnapOrigin);
   // set initial configuration
-  const addr = await (await snap.getFilecoinSnapApi()).getAddress()
-  console.log("addr: ", addr)
-  // await (await snap.getFilecoinSnapApi()).configure(config);
+  await (await snap.getFilecoinSnapApi()).configure(config);
   // return snap object
   return snap;
 }
