@@ -2,18 +2,6 @@ import {SnapRpcMethodRequest} from "@chainsafe/filsnap-types";
 import { defaultSnapOrigin } from "../config";
 import { MetamaskFilecoinSnap, enableFilecoinSnap } from "../filsnap_adapter";
 
-// declare global {
-//     interface Window {
-//         ethereum: {
-//             isMetaMask: boolean;
-//             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//             send: <T>(request: SnapRpcMethodRequest | {method: string; params?: any}) => Promise<T>;
-//             on: (eventName: unknown, callback: unknown) => unknown;
-//             // requestIndex: () => Promise<{getSnapApi: (origin: string) => Promise<FilecoinApi>}>;
-//         }
-//     }
-// }
-
 export const defaultSnapId = 'local:http://localhost:8080';
 
 let isInstalled: boolean = false;
@@ -24,7 +12,7 @@ export interface SnapInitializationResponse {
 }
 
 export async function initiateFilecoinSnap(): Promise<SnapInitializationResponse> {
-    const snapId = process.env.REACT_APP_SNAP_ID ? process.env.REACT_APP_SNAP_ID : defaultSnapId
+    const snapId = defaultSnapOrigin
     try {
         console.log('Attempting to connect to snap...');
         const metamaskFilecoinSnap = await enableFilecoinSnap({network: "f"}, snapId, {version: "latest"});

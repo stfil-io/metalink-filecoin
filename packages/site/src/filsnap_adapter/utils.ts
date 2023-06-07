@@ -1,4 +1,10 @@
+// Check if window is defined (so if in the browser or in node.js).
+const isBrowser = typeof window !== "undefined"
+
 export function hasMetaMask(): boolean {
+  if (!isBrowser) {
+    return false
+  }
   if (!window.ethereum) {
     return false;
   }

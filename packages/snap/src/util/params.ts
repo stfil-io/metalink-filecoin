@@ -53,7 +53,6 @@ export function isValidSendRequest(
       "signedMessage" in params &&
       // @ts-expect-error
       "message" in params.signedMessage &&
-      // @ts-expect-error
       "signature" in params.signedMessage
     )
   ) {
@@ -71,7 +70,6 @@ export function isValidEstimateGasRequest(
       "message" in params &&
       // @ts-expect-error
       "to" in params.message &&
-      // @ts-expect-error
       "value" in params.message
     )
   ) {

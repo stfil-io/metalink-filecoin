@@ -1,16 +1,12 @@
-import { FunctionComponent, ReactNode, useContext } from 'react';
-import styled from 'styled-components';
-import { Footer, Header } from './components';
+import { FunctionComponent, ReactNode } from 'react';
+import {Dashboard} from "./containers/Dashboard/Dashboard";
+import {MetaMaskContextProvider} from "./context/metamask";
+import { createGlobalStyle } from 'styled-components';
 
-import { GlobalStyle } from './config/theme';
-import { ToggleThemeContext } from './Root';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
-  max-width: 100vw;
+export const GlobalStyle = createGlobalStyle`
+  .MuiBox-root {
+    margin: 20px;
+  }
 `;
 
 export type AppProps = {
@@ -18,16 +14,12 @@ export type AppProps = {
 };
 
 export const App: FunctionComponent<AppProps> = ({ children }) => {
-  const toggleTheme = useContext(ToggleThemeContext);
-
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
-        <Header handleToggleClick={toggleTheme} />
-        {children}
-        <Footer />
-      </Wrapper>
+      <MetaMaskContextProvider>
+          <Dashboard/>
+      </MetaMaskContextProvider>
     </>
   );
 };

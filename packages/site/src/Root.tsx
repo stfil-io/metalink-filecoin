@@ -1,8 +1,6 @@
 import { createContext, FunctionComponent, ReactNode, useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { getThemePreference, setLocalStorage } from './utils';
-import { dark, light } from './config/theme';
-import { MetaMaskProvider } from './hooks';
+import {ThemeProvider} from "@material-ui/core/styles"
+import {theme} from "./style/theme";
 
 export type RootProps = {
   children: ReactNode;
@@ -15,18 +13,9 @@ export const ToggleThemeContext = createContext<ToggleTheme>(
 );
 
 export const Root: FunctionComponent<RootProps> = ({ children }) => {
-  const [darkTheme, setDarkTheme] = useState(getThemePreference());
-
-  const toggleTheme: ToggleTheme = () => {
-    setLocalStorage('theme', darkTheme ? 'light' : 'dark');
-    setDarkTheme(!darkTheme);
-  };
-
   return (
-    <ToggleThemeContext.Provider value={toggleTheme}>
-      <ThemeProvider theme={darkTheme ? dark : light}>
-        <MetaMaskProvider>{children}</MetaMaskProvider>
+      <ThemeProvider theme={theme}>
+        {children}
       </ThemeProvider>
-    </ToggleThemeContext.Provider>
   );
 };

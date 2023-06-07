@@ -111,8 +111,6 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => 
         request.params.message,
         request.params.maxFee
       );
-    case 'fil_getAddress':
-      return "gggg1234567";
     default:
       throw new Error('Method not found.');
   }
