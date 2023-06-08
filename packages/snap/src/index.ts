@@ -104,7 +104,6 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => 
       isValidSendRequest(request.params);
       return await sendMessage(snap, api, request.params.signedMessage);
     case "fil_getGasForMessage":
-      console.log("fil_getGasForMessage: ", request.params)
       isValidEstimateGasRequest(request.params);
       return await estimateMessageGas(
         snap,

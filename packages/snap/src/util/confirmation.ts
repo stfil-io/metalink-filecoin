@@ -17,7 +17,9 @@ export async function showConfirmationDialog(
     panels.push( text(`${message.description}`))
   }
   if (message.textAreaContent) {
-    panels.push( text(`${message.textAreaContent}`))
+    message.textAreaContent.split("\n").forEach((t) => {
+      panels.push( text(`${t}`))
+    })
   }
   return (await snap.request({
     method: 'snap_dialog',

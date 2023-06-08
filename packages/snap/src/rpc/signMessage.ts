@@ -82,9 +82,9 @@ export async function signMessage(
         },
         { message: "method:", value: message.method },
         { message: "params:", value: message.params },
-        { message: "gas limit:", value: `${message.gaslimit} aFIL` },
-        { message: "gas fee cap:", value: `${message.gasfeecap} aFIL` },
-        { message: "gas premium:", value: `${message.gaspremium} aFIL` },
+        { message: "gas limit:", value: `${message.gaslimit} attoFIL` },
+        { message: "gas fee cap:", value: `${message.gasfeecap} attoFIL` },
+        { message: "gas premium:", value: `${message.gaspremium} attoFIL` },
       ]),
     });
 
