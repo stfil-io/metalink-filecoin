@@ -26,7 +26,7 @@ export async function estimateMessageGas(
   };
   // set max fee to 0.1 FIL if not set
   const maxFeeAttoFil = maxFee
-    ? maxFee
+    ? maxFee.includes(".") ? new FilecoinNumber("0.1", "fil").toAttoFil() : maxFee
     : new FilecoinNumber("0.1", "fil").toAttoFil();
   const messageEstimate = await api.gasEstimateMessageGas(
     message,

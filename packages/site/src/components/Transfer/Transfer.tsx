@@ -66,14 +66,13 @@ export const Transfer: React.FC<ITransferProps> = ({network, api, onNewMessageCa
 
     const onAutoFillGas = useCallback(async () => {
         if (recipient && amount && api) {
-
             const messageEstimate = (maxFee === "0") ? await api.calculateGasForMessage({
                 to: recipient,
                 value: BigInt(filToAttoFil(amount)).toString()
             }) : await api.calculateGasForMessage({
                 to: recipient,
                 value: BigInt(filToAttoFil(amount)).toString()
-            }, maxFee);
+            }, filToAttoFil(maxFee));
             setGasPremium(attoFilToFil(messageEstimate.gaspremium));
             setGasFeeCap(attoFilToFil(messageEstimate.gasfeecap));
             setGasLimit(attoFilToFil(messageEstimate.gaslimit.toString()));
