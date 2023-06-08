@@ -2,7 +2,6 @@ import { GatsbySSR } from 'gatsby';
 import { StrictMode } from 'react';
 import { App } from './src/App';
 import { Root } from './src/Root';
-import React from 'react';
 
 export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
   <StrictMode>
