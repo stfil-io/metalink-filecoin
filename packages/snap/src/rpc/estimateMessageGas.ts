@@ -7,6 +7,7 @@ import { FilecoinNumber } from "@glif/filecoin-number/dist";
 import { SnapsGlobalObject } from "@metamask/snaps-types";
 import { getKeyPair } from "../filecoin/account";
 import { LotusRpcApi } from "../filecoin/types";
+import { getFilAddress } from "../util";
 
 export async function estimateMessageGas(
   snap: SnapsGlobalObject,
@@ -14,6 +15,7 @@ export async function estimateMessageGas(
   messageRequest: MessageRequest,
   maxFee?: string
 ): Promise<MessageGasEstimate> {
+  const toFilAddress = await getFilAddress(api, messageRequest.to)
   const keypair = await getKeyPair(snap);
   const message: Message = {
     ...messageRequest,
@@ -29,7 +31,10 @@ export async function estimateMessageGas(
     ? maxFee.includes(".") ? new FilecoinNumber("0.1", "fil").toAttoFil() : maxFee
     : new FilecoinNumber("0.1", "fil").toAttoFil();
   const messageEstimate = await api.gasEstimateMessageGas(
-    message,
+    {
+      ...message,
+      to: toFilAddress
+    },
     { MaxFee: maxFeeAttoFil },
     null
   );

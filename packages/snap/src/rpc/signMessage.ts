@@ -15,6 +15,10 @@ import { getKeyPair } from "../filecoin/account";
 import { LotusRpcApi } from "../filecoin/types";
 import { showConfirmationDialog } from "../util/confirmation";
 import { messageCreator } from "../util/messageCreator";
+import { Wallet } from '../izari-filecoin/wallet'
+import { Transaction } from '../izari-filecoin/transaction'
+import { getFilAddress, getNetworkPrefix } from "../util";
+import { SignatureType } from "../izari-filecoin/artifacts/wallet";
 
 export async function signMessage(
   snap: SnapsGlobalObject,
@@ -22,6 +26,7 @@ export async function signMessage(
   messageRequest: MessageRequest
 ): Promise<SignMessageResponse> {
   try {
+    const toFilAddress = await getFilAddress(api, messageRequest.to)
     const keypair = await getKeyPair(snap);
     // extract gas params
     const gl =
@@ -60,7 +65,10 @@ export async function signMessage(
       message.gaspremium === "0"
     ) {
       const messageEstimate = await api.gasEstimateMessageGas(
-        message,
+        {
+          ...message,
+          to: toFilAddress
+        },
         { MaxFee: "0" },
         null
       );
@@ -88,9 +96,22 @@ export async function signMessage(
       ]),
     });
 
-    let sig: SignedMessage = null;
+    let sig: SignedMessage = null
     if (confirmation) {
-      sig = transactionSign(message, keypair.privateKey);
+      message.to = toFilAddress
+      const accountData = Wallet.recoverAccount(await getNetworkPrefix(api), SignatureType.SECP256K1, keypair.privateKey)
+      const signature = (await Wallet.signTransaction(accountData, Transaction.fromJSON({
+        To: message.to,
+        From: message.from,
+        Value: message.value,
+        Params: message.params,
+        GasFeeCap: message.gasfeecap,
+        GasPremium: message.gaspremium,
+        GasLimit: message.gaslimit,
+        Nonce: message.nonce,
+        Method: message.method,
+      }))).toJSON()
+      sig = {message, signature: {data: signature.Data, type: signature.Type}}
     }
 
     return { confirmed: confirmation, error: null, signedMessage: sig };
