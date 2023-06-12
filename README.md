@@ -1,6 +1,6 @@
 # MetaLink
 
-MetaLink (plugin) enables Filecoin network inside Metamask and by doing this provides DAPPs easy integration.
+MetaLink(plugin) to enable MetaMask users interaction with filecoin dapps.
 
 ## Testing MetaLink
 

@@ -1,13 +1,13 @@
 {
-  "version": "0.1.0",
-  "description": "STFIL MetaLink (plugin) enables Filecoin network inside Metamask and by doing this provides DAPPs easy integration.",
+  "version": "1.0.0",
+  "description": "MetaLink(plugin) to enable MetaMask users interaction with filecoin dapps.",
   "proposedName": "STFIL MetaLink",
   "repository": {
     "type": "git",
     "url": "https://github.com/stfil-io/metalink-filecoin.git"
   },
   "source": {
-    "shasum": "mYTcX+7558WKBVJXUI9T+Ao6DgwoEwcNu45KUNOLz9Q=",
+    "shasum": "dOwQYI2txSzFZOluKX5l7HrUWLvlyDzILxE0khuckJY=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

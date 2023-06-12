@@ -1,7 +1,7 @@
 {
   "name": "@stfil/metalink-filecoin",
-  "version": "0.1.0",
-  "description": "The 'Hello, world!' of MetaMask Snaps, now written in TypeScript.",
+  "version": "1.0.0",
+  "description": "MetaLink(plugin) to enable MetaMask users interaction with filecoin dapps.",
   "repository": {
     "type": "git",
     "url": "https://github.com/stfil-io/metalink-filecoin.git"
