@@ -4,15 +4,15 @@
   "proposedName": "STFIL MetaLink",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "https://github.com/stfil-io/metalink-filecoin.git"
   },
   "source": {
-    "shasum": "wtAdmv5ueERFQ8uocHAKCnOwFZHmh1BV9S65FS2wDP8=",
+    "shasum": "KNAT9L9BhZbuZwZrfn49u1VyRJUXus+kU1y7PkhYWTE=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "snap",
+        "packageName": "@stfil-io/metalink-filecoin",
         "registry": "https://registry.npmjs.org/"
       }
     }
