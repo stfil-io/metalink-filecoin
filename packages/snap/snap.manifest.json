@@ -7,12 +7,12 @@
     "url": "https://github.com/stfil-io/metalink-filecoin.git"
   },
   "source": {
-    "shasum": "KNAT9L9BhZbuZwZrfn49u1VyRJUXus+kU1y7PkhYWTE=",
+    "shasum": "mYTcX+7558WKBVJXUI9T+Ao6DgwoEwcNu45KUNOLz9Q=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "@stfil-io/metalink-filecoin",
+        "packageName": "@stfil/metalink-filecoin",
         "registry": "https://registry.npmjs.org/"
       }
     }
