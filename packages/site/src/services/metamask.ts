@@ -1,11 +1,7 @@
-import {SnapRpcMethodRequest} from "@chainsafe/filsnap-types";
 import { defaultSnapOrigin } from "../config";
 import { MetamaskFilecoinSnap, enableFilecoinSnap } from "../filsnap_adapter";
 
-export const defaultSnapId = 'local:http://localhost:8080';
-
 let isInstalled: boolean = false;
-
 export interface SnapInitializationResponse {
     isSnapInstalled: boolean;
     snap?: MetamaskFilecoinSnap;
