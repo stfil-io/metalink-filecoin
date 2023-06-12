@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
-  "description": "An example Snap written in TypeScript.",
-  "proposedName": "TypeScript Example Snap",
+  "description": "STFIL MetaLink (plugin) enables Filecoin network inside Metamask and by doing this provides DAPPs easy integration.",
+  "proposedName": "STFIL MetaLink",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/template-snap-monorepo.git"
   },
   "source": {
-    "shasum": "U8sWwx1MdR0itOUF2svjZkK6dvXsxAQWmFLSA6Aul9s=",
+    "shasum": "wtAdmv5ueERFQ8uocHAKCnOwFZHmh1BV9S65FS2wDP8=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

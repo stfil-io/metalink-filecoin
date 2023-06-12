@@ -8,6 +8,6 @@ export async function getMessages(
   const state = (await snap.request({
     method: "snap_manageState",
     params: { operation: "get" },
-  })) as MetamaskState;
+  })) as unknown as MetamaskState;
   return state?.filecoin?.messages;
 }

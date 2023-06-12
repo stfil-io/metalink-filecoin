@@ -8,7 +8,6 @@ import { SnapsGlobalObject } from "@metamask/snaps-types";
 import {
   Message,
   SignedMessage,
-  transactionSign,
   transactionSignRaw,
 } from "@zondax/filecoin-signing-tools/js";
 import { getKeyPair } from "../filecoin/account";

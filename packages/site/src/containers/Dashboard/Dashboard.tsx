@@ -89,10 +89,10 @@ export const Dashboard = () => {
             <Grid direction="column" alignItems="center" justifyContent="center" container spacing={3}>
                 <Box m="2rem" style={{ textAlign: "center" }}>
                     <Typography variant="h2">
-                        Filsnap demo
+                        MetaLink demo
                     </Typography>
                     <Typography style={{ color: "gray", fontStyle: "italic" }} variant="h6">
-                        Filsnap enables Filecoin network inside Metamask.
+                        MetaLink enables Filecoin network inside Metamask.
                     </Typography>
                 </Box>
                 {!state.filecoinSnap.isInstalled && <>
