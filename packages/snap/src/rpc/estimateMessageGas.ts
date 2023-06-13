@@ -2,7 +2,7 @@ import {
   Message,
   MessageGasEstimate,
   MessageRequest,
-} from "@chainsafe/filsnap-types";
+} from "@stfil/metalink-filecoin-types";
 import { FilecoinNumber } from "@glif/filecoin-number/dist";
 import { SnapsGlobalObject } from "@metamask/snaps-types";
 import { getKeyPair } from "../filecoin/account";

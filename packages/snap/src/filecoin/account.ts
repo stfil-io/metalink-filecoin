@@ -1,6 +1,6 @@
 import { Buffer } from "buffer";
 import { keyRecover } from "@zondax/filecoin-signing-tools/js";
-import { KeyPair } from "@chainsafe/filsnap-types";
+import { KeyPair } from "@stfil/metalink-filecoin-types";
 import {
   getBIP44AddressKeyDeriver,
   JsonBIP44CoinTypeNode,

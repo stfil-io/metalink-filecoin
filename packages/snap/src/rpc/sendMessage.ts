@@ -1,4 +1,4 @@
-import { MessageStatus, SignedMessage } from "@chainsafe/filsnap-types";
+import { MessageStatus, SignedMessage } from "@stfil/metalink-filecoin-types";
 import { SnapsGlobalObject } from "@metamask/snaps-types";
 import { updateMessageInState } from "../filecoin/message";
 import { LotusRpcApi } from "../filecoin/types";

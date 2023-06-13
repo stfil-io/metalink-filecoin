@@ -2,7 +2,7 @@ import {
   MessageRequest,
   SignedMessage,
   SnapConfig,
-} from "@chainsafe/filsnap-types";
+} from "@stfil/metalink-filecoin-types";
 
 type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
 

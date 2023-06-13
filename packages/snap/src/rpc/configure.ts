@@ -1,4 +1,4 @@
-import { SnapConfig } from "@chainsafe/filsnap-types";
+import { SnapConfig } from "@stfil/metalink-filecoin-types";
 import { SnapsGlobalObject } from "@metamask/snaps-types";
 import deepmerge from "deepmerge";
 import { getDefaultConfiguration } from "../configuration";

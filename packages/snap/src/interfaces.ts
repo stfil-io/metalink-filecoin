@@ -2,7 +2,7 @@ import {
   MessageStatus,
   MetamaskFilecoinRpcRequest,
   SnapConfig,
-} from "@chainsafe/filsnap-types";
+} from "@stfil/metalink-filecoin-types";
 import { defaultConfiguration } from "./configuration/predefined";
 
 export type FMethodCallback = (

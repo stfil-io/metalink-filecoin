@@ -1,4 +1,4 @@
-import { Message, SignedMessage } from "@chainsafe/filsnap-types";
+import { Message, SignedMessage } from "@stfil/metalink-filecoin-types";
 
 export interface LotusRpcApi {
   version(): Promise<VersionResponse>;

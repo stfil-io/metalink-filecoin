@@ -1,4 +1,4 @@
-import { MessageStatus } from "@chainsafe/filsnap-types";
+import { MessageStatus } from "@stfil/metalink-filecoin-types";
 import { SnapsGlobalObject } from "@metamask/snaps-types";
 import { MetamaskState } from "../interfaces";
 
