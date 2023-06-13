@@ -1,7 +1,7 @@
 {
   "name": "root",
   "private": true,
-  "license": "(MIT-0 OR Apache-2.0)",
+  "license": "(Apache-2.0 AND MIT)",
   "author": "STFIL <info@stfil.io>",
   "workspaces": [
     "packages/*"
