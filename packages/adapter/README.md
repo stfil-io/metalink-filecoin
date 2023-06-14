@@ -55,4 +55,4 @@ const address = await api.getAddress();
 console.log(`Snap installed, account generated with address: ${address}`);
 ```
 
-For more details about exposed API see [API documentation](../types/README.md).
+For more details about exposed API see [API documentation](https://github.com/stfil-io/metalink-filecoin/blob/main/packages/types/README.md).

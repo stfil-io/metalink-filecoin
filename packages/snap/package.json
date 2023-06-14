@@ -9,6 +9,12 @@
     "type": "git",
     "url": "https://github.com/stfil-io/metalink-filecoin.git"
   },
+  "keywords": [
+    "filecoin",
+    "metamask",
+    "snap",
+    "dapp"
+  ],
   "main": "src/index.ts",
   "files": [
     "dist/",
