@@ -4,7 +4,7 @@
 
 MetaLinkFilecoin types defines the `Filecoin Message` and snap interaction `Filecoin Snap API`.
 
-##API Documentation
+## API Documentation
 
 ### Filecoin Snap API
 

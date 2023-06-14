@@ -16,7 +16,7 @@ function Footer() {
                     </a>
                 </Box>
                 <Box m="2rem" height="100%">
-                    <a style={{textDecoration: "unset"}} href={"https://github.com/chainsafe/filsnap/wiki"}>
+                    <a style={{textDecoration: "unset"}} href={"https://github.com/stfil-io/metalink-filecoin/blob/main/packages/snap/README.md"}>
                         <DescriptionIcon fontSize={"large"} />
                         <Typography>Docs</Typography>
                     </a>

@@ -1,6 +1,6 @@
 {
   "name": "@stfil/metalink-filecoin-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "types": "./index.ts",
   "license": "(Apache-2.0 AND MIT)",
   "author": "STFIL <info@stfil.io>",
