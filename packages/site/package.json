@@ -25,12 +25,13 @@
     ]
   },
   "dependencies": {
-    "@chainsafe/filsnap-types": "^2.1.3",
     "@glif/filecoin-number": "^2.0.66",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@metamask/providers": "^9.0.0",
+    "@stfil/metalink-filecoin-adapter": "workspace:^",
+    "@stfil/metalink-filecoin-types": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",

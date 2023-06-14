@@ -1,6 +1,6 @@
 import React from "react";
 import {Box, Button, Card, CardContent, CardHeader, Divider, Grid, Typography} from '@material-ui/core/';
-import {FilecoinSnapApi} from "@chainsafe/filsnap-types";
+import {FilecoinSnapApi} from "@stfil/metalink-filecoin-types";
 
 export interface AccountProps {
     address: string,
@@ -19,7 +19,7 @@ export const Account = (props: AccountProps) => {
         }
     };
 
-    return (        
+    return (
         <Card>
             <CardHeader title="Account details"/>
             <CardContent>

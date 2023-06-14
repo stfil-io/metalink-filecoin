@@ -4,7 +4,7 @@ import React, { useCallback, useContext, useEffect, useState } from "react";
 import Alert from "@material-ui/lab/Alert";
 import { MetamaskActions, MetaMaskContext } from "../../context/metamask";
 import { initiateFilecoinSnap } from "../../services/metamask";
-import { isMetamaskSnapsSupported } from "../../filsnap_adapter";
+import { isMetamaskSnapsSupported } from "@stfil/metalink-filecoin-adapter";
 
 export const MetaMaskConnector = () => {
 

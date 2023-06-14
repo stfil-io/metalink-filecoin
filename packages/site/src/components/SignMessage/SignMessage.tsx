@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Box, Button, Card, CardContent, CardHeader, Dialog, Grid, TextField} from '@material-ui/core/';
 import {DialogActions, DialogContent, DialogContentText, DialogTitle, Typography} from "@material-ui/core";
-import {FilecoinSnapApi} from "@chainsafe/filsnap-types";
+import {FilecoinSnapApi} from "@stfil/metalink-filecoin-types";
 import toHex from "to-hex";
 
 export interface SignMessageProps {
@@ -34,14 +34,14 @@ export const SignMessage = (props: SignMessageProps) => {
             <CardHeader title="Sign custom message"/>
             <CardContent>
                 <Grid container>
-                    <TextField 
-                    onChange={handleChange} 
-                    value={textFieldValue} 
-                    size="medium" 
-                    fullWidth 
+                    <TextField
+                    onChange={handleChange}
+                    value={textFieldValue}
+                    size="medium"
+                    fullWidth
                     id="custom-message"
-                    label="Message" 
-                    variant="outlined" 
+                    label="Message"
+                    variant="outlined"
                     />
                 </Grid>
                 <Box m="0.5rem" />

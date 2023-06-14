@@ -1,7 +1,7 @@
 import React from "react";
 import {Paper, Table, TableContainer, TableCell,
     TableRow, TableHead, TableBody} from '@material-ui/core/';
-import {MessageStatus} from "@chainsafe/filsnap-types";
+import {MessageStatus} from "@stfil/metalink-filecoin-types";
 
 export interface TransactionTableProps {
     txs: MessageStatus[];
@@ -10,7 +10,7 @@ export interface TransactionTableProps {
 export const TransactionTable = (props: TransactionTableProps) => {
     return (
         <TableContainer className="transtaction-table" component={Paper}>
-            <Table 
+            <Table
             aria-label="simple table">
                 <TableHead>
                 <TableRow>

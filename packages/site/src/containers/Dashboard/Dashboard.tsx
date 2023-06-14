@@ -6,7 +6,7 @@ import {
 import { MetaMaskConnector } from "../MetaMaskConnector/MetaMaskConnector";
 import { MetaMaskContext } from "../../context/metamask";
 import { Account } from "../../components/Account/Account";
-import { FilecoinSnapApi, MessageStatus } from "@chainsafe/filsnap-types";
+import { FilecoinSnapApi, MessageStatus } from "@stfil/metalink-filecoin-types";
 import { TransactionTable } from "../../components/TransactionTable/TransactionTable";
 import { SignMessage } from "../../components/SignMessage/SignMessage";
 import { Transfer } from "../../components/Transfer/Transfer";

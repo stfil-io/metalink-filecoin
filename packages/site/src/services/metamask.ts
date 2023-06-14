@@ -1,5 +1,5 @@
 import { defaultSnapOrigin } from "../config";
-import { MetamaskFilecoinSnap, enableFilecoinSnap } from "../filsnap_adapter";
+import { MetamaskFilecoinSnap, enableFilecoinSnap } from "@stfil/metalink-filecoin-adapter";
 
 let isInstalled: boolean = false;
 export interface SnapInitializationResponse {

@@ -1,0 +1,12 @@
+import { MessageStatus, MessageRequest, SignedMessage, SignMessageResponse, SnapConfig, MessageGasEstimate, SignRawMessageResponse } from "@stfil/metalink-filecoin-types";
+import { MetamaskFilecoinSnap } from "./snap";
+export declare function getAddress(this: MetamaskFilecoinSnap): Promise<string>;
+export declare function getPublicKey(this: MetamaskFilecoinSnap): Promise<string>;
+export declare function getBalance(this: MetamaskFilecoinSnap): Promise<string>;
+export declare function exportPrivateKey(this: MetamaskFilecoinSnap): Promise<string>;
+export declare function configure(this: MetamaskFilecoinSnap, configuration: SnapConfig): Promise<void>;
+export declare function signMessage(this: MetamaskFilecoinSnap, message: MessageRequest): Promise<SignMessageResponse>;
+export declare function signMessageRaw(this: MetamaskFilecoinSnap, rawMessage: string): Promise<SignRawMessageResponse>;
+export declare function sendMessage(this: MetamaskFilecoinSnap, signedMessage: SignedMessage): Promise<MessageStatus>;
+export declare function getMessages(this: MetamaskFilecoinSnap): Promise<MessageStatus[]>;
+export declare function calculateGasForMessage(this: MetamaskFilecoinSnap, message: MessageRequest, maxFee?: string): Promise<MessageGasEstimate>;

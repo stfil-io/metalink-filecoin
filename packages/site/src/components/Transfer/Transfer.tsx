@@ -11,7 +11,7 @@ import {
     TextField
 } from '@material-ui/core/';
 import {Alert} from "@material-ui/lab";
-import {FilecoinSnapApi} from "@chainsafe/filsnap-types";
+import {FilecoinSnapApi} from "@stfil/metalink-filecoin-types";
 import { attoFilToFil, filToAttoFil } from "../../services/utils";
 
 interface ITransferProps {
@@ -29,7 +29,7 @@ export const Transfer: React.FC<ITransferProps> = ({network, api, onNewMessageCa
     const [gasPremium, setGasPremium] = useState<string>("0");
     const [gasFeeCap, setGasFeeCap] = useState<string>("0");
     const [maxFee, setMaxFee] = useState<string>("0");
-    
+
     const [alert, setAlert] = useState(false);
     const [severity, setSeverity] = useState("success" as AlertSeverity);
     const [message, setMessage] = useState("");
@@ -49,7 +49,7 @@ export const Transfer: React.FC<ITransferProps> = ({network, api, onNewMessageCa
     const handleGasPremiumChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         setGasPremium(event.target.value);
     }, [setGasPremium]);
-    
+
     const handleMaxFeeChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         setMaxFee(event.target.value);
     }, [setMaxFee]);
