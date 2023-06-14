@@ -52,20 +52,6 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => 
     api = await getApi(snap);
   }
   switch (request.method) {
-    case 'hello':
-      return await snap.request({
-        method: 'snap_dialog',
-        params: {
-          type: 'confirmation',
-          content: panel([
-            text(`Hello, **${origin}**!`),
-            text('This custom confirmation is just for display purposes.'),
-            text(
-              'But you can edit the snap source code to make it do something, if you want to!',
-            ),
-          ]),
-        },
-      });
     case "fil_configure": {
       isValidConfigureRequest(request.params);
       const resp = await configure(

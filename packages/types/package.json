@@ -7,7 +7,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "MetaLinkFilecoin type defines the Filecoin message type and snap interaction api.",
+  "description": "MetaLinkFilecoin types defines the Filecoin Message and snap interaction Filecoin Snap API.",
   "keywords": [
     "filecoin",
     "metamask",

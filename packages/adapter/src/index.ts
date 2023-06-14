@@ -6,7 +6,7 @@ import {
 } from "./utils";
 import { MetamaskFilecoinSnap } from "./snap";
 
-const defaultSnapOrigin = "npm:@chainsafe/polkadot-snap";
+const defaultSnapOrigin = "npm:@stfil/metalink-filecoin";
 
 export { MetamaskFilecoinSnap } from "./snap";
 export {

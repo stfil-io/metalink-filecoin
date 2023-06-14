@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.enableFilecoinSnap = exports.isSnapInstalled = exports.isMetamaskSnapsSupported = exports.hasMetaMask = exports.MetamaskFilecoinSnap = void 0;
 const utils_1 = require("./utils");
 const snap_1 = require("./snap");
-const defaultSnapOrigin = "npm:@chainsafe/polkadot-snap";
+const defaultSnapOrigin = "npm:@stfil/metalink-filecoin";
 var snap_2 = require("./snap");
 Object.defineProperty(exports, "MetamaskFilecoinSnap", { enumerable: true, get: function () { return snap_2.MetamaskFilecoinSnap; } });
 var utils_2 = require("./utils");

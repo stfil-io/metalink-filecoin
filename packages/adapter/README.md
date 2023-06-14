@@ -13,9 +13,9 @@ Adapter has only exposed function for installing Filecoin snap.
 
 ```typescript
 async function enableFilecoinSnap(
-  config: Partial<SnapConfig>, 
+  config: Partial<SnapConfig>,
   snapOrigin?: string
-): Promise<MetamaskFilecoinSnap> 
+): Promise<MetamaskFilecoinSnap>
 ```
 
 On snap installation, it is possible to send full or partial configuration.
@@ -41,7 +41,7 @@ export interface UnitConfiguration {
 }
 ```
 
-After snap installation, this function returns `MetamaskFilecoinSnap` object that can be used to retrieve snap API. 
+After snap installation, this function returns `MetamaskFilecoinSnap` object that can be used to retrieve snap API.
 An example of initializing Filecoin snap and invoking snap API is shown below.
 
 ```typescript
@@ -54,3 +54,5 @@ const address = await api.getAddress();
 
 console.log(`Snap installed, account generated with address: ${address}`);
 ```
+
+For more details about exposed API see [API documentation](../types/README.md).

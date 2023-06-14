@@ -3,6 +3,7 @@ dist/
 coverage/
 .cache/
 public/
+.idea/
 
 # Logs
 logs
