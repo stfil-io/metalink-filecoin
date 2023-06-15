@@ -24,15 +24,15 @@ npm i @stfil/metalink-filecoin-types
 ### Steps for usage
 
 #### Install snap
-Install snap by calling enableMetaLinkFilecoinSnap from @stfil/metalink-filecoin-adapter package.
+Install snap by calling `enableMetaLinkFilecoinSnap` from `@stfil/metalink-filecoin-adapter` package.
 
 This will prompt the user to:
 * accept the snap installation
 * accept all snap permissions
 
-This function accepts the configuration object for defining network properties, the same as configure method from `Filecoin Snap API`. After successful installation, it will return `MetaLinkFilecoinSnap` object.
+This function accepts the configuration object for defining network properties, the same as configure method from `MetaLinkFilecoin Snap API`. After successful installation, it will return `MetaLinkFilecoinSnap` object.
 
-### Invoke Filecoin Snap API
+### Invoke MetaLinkFilecoin Snap API
 `MetaLinkFilecoinSnap` object has an exposed method for obtaining API `getApi`.
 
 For more details about exposed API see [API documentation](https://github.com/stfil-io/metalink-filecoin/blob/main/packages/types/README.md).
