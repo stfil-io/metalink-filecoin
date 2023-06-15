@@ -1,10 +1,10 @@
 import { SnapConfig } from "@stfil/metalink-filecoin-types";
-import { MetamaskFilecoinSnap } from "./snap";
-export { MetamaskFilecoinSnap } from "./snap";
+import { MetaLinkFilecoinSnap } from "./snap";
+export { MetaLinkFilecoinSnap } from "./snap";
 export { hasMetaMask, isMetamaskSnapsSupported, isSnapInstalled, } from "./utils";
 export type SnapInstallationParamNames = "version" | string;
 /**
- * Install and enable Filecoin snap
+ * Install and enable MetaLinkFilecoin snap
  *
  * Checks for existence of Metamask and version compatibility with snaps before installation.
  *
@@ -14,6 +14,6 @@ export type SnapInstallationParamNames = "version" | string;
  * @param config - SnapConfig
  * @param snapOrigin
  *
- * @return MetamaskFilecoinSnap - adapter object that exposes snap API
+ * @return MetaLinkFilecoinSnap - adapter object that exposes snap API
  */
-export declare function enableFilecoinSnap(config: Partial<SnapConfig>, snapOrigin?: string, snapInstallationParams?: Record<SnapInstallationParamNames, unknown>): Promise<MetamaskFilecoinSnap>;
+export declare function enableMetaLinkFilecoinSnap(config: Partial<SnapConfig>, snapOrigin?: string, snapInstallationParams?: Record<SnapInstallationParamNames, unknown>): Promise<MetaLinkFilecoinSnap>;

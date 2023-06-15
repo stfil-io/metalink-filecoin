@@ -6,7 +6,7 @@ import {
 import { MetaMaskConnector } from "../MetaMaskConnector/MetaMaskConnector";
 import { MetaMaskContext } from "../../context/metamask";
 import { Account } from "../../components/Account/Account";
-import { FilecoinSnapApi, MessageStatus } from "@stfil/metalink-filecoin-types";
+import { MetaLinkFilecoinSnapApi, MessageStatus } from "@stfil/metalink-filecoin-types";
 import { TransactionTable } from "../../components/TransactionTable/TransactionTable";
 import { SignMessage } from "../../components/SignMessage/SignMessage";
 import { Transfer } from "../../components/Transfer/Transfer";
@@ -25,7 +25,7 @@ export const Dashboard = () => {
 
     const [network, setNetwork] = useState<"f" | "t">("f");
 
-    const [api, setApi] = useState<FilecoinSnapApi | null>(null);
+    const [api, setApi] = useState<MetaLinkFilecoinSnapApi | null>(null);
 
     const handleNetworkChange = async (event: React.ChangeEvent<{ value: any }>) => {
         const selectedNetwork = event.target.value as "f" | "t";
@@ -51,7 +51,7 @@ export const Dashboard = () => {
     useEffect(() => {
         (async () => {
             if (state.filecoinSnap.isInstalled && state.filecoinSnap.snap) {
-                const filecoinApi = await state.filecoinSnap.snap.getFilecoinSnapApi();
+                const filecoinApi = await state.filecoinSnap.snap.getApi();
                 setApi(filecoinApi);
             }
         })();

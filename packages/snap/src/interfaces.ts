@@ -1,13 +1,13 @@
 import {
   MessageStatus,
-  MetamaskFilecoinRpcRequest,
+  MetaLinkFilecoinRpcRequest,
   SnapConfig,
 } from "@stfil/metalink-filecoin-types";
 import { defaultConfiguration } from "./configuration/predefined";
 
 export type FMethodCallback = (
   originString: string,
-  requestObject: MetamaskFilecoinRpcRequest
+  requestObject: MetaLinkFilecoinRpcRequest
 ) => Promise<unknown>;
 
 export type MetamaskState = {

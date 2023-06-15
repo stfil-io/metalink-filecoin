@@ -1,20 +1,20 @@
 import { defaultSnapOrigin } from "../config";
-import { MetamaskFilecoinSnap, enableFilecoinSnap } from "@stfil/metalink-filecoin-adapter";
+import { MetaLinkFilecoinSnap, enableMetaLinkFilecoinSnap } from "@stfil/metalink-filecoin-adapter";
 
 let isInstalled: boolean = false;
 export interface SnapInitializationResponse {
     isSnapInstalled: boolean;
-    snap?: MetamaskFilecoinSnap;
+    snap?: MetaLinkFilecoinSnap;
 }
 
 export async function initiateFilecoinSnap(): Promise<SnapInitializationResponse> {
     const snapId = defaultSnapOrigin
     try {
         console.log('Attempting to connect to snap...');
-        const metamaskFilecoinSnap = await enableFilecoinSnap({network: "f"}, snapId, {version: "latest"});
+        const MetaLinkFilecoinSnap = await enableMetaLinkFilecoinSnap({network: "f"}, snapId, {version: "latest"});
         isInstalled = true;
         console.log('Snap installed!');
-        return {isSnapInstalled: true, snap: metamaskFilecoinSnap};
+        return {isSnapInstalled: true, snap: MetaLinkFilecoinSnap};
     } catch (e) {
         console.error(e);
         isInstalled = false;

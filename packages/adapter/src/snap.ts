@@ -1,4 +1,4 @@
-import { FilecoinSnapApi } from "@stfil/metalink-filecoin-types";
+import { MetaLinkFilecoinSnapApi } from "@stfil/metalink-filecoin-types";
 import {
   calculateGasForMessage,
   configure,
@@ -12,7 +12,7 @@ import {
   signMessageRaw,
 } from "./methods";
 
-export class MetamaskFilecoinSnap {
+export class MetaLinkFilecoinSnap {
   // snap parameters
   protected readonly snapOrigin: string;
   protected readonly snapId: string;
@@ -23,7 +23,7 @@ export class MetamaskFilecoinSnap {
   }
 
   // eslint-disable-next-line @typescript-eslint/require-await
-  public getFilecoinSnapApi = async (): Promise<FilecoinSnapApi> => {
+  public getApi = async (): Promise<MetaLinkFilecoinSnapApi> => {
     return {
       calculateGasForMessage: calculateGasForMessage.bind(this),
       configure: configure.bind(this),

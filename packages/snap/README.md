@@ -8,7 +8,7 @@ MetaLinkFilecoin snap (plugin) enables Filecoin network inside Metamask and by d
 ## Architecture
 MetaLinkFilecoin snap is installed using [metalink-filecoin-adapter](https://www.npmjs.com/package/@stfil/metalink-filecoin-adapter). Usage flow is represented in the diagram below.
 
-![](https://github.com/stfil-io/metalink-filecoin/blob/main/packages/snap/images/metamask_filecoin_snap.png)
+![](https://github.com/stfil-io/metalink-filecoin/blob/main/packages/snap/images/metalink_filecoin_snap.png)
 
 ## How to integrate into the project
 
@@ -24,15 +24,15 @@ npm i @stfil/metalink-filecoin-types
 ### Steps for usage
 
 #### Install snap
-Install snap by calling enableFilecoinSnap from @stfil/metalink-filecoin-adapter package.
+Install snap by calling enableMetaLinkFilecoinSnap from @stfil/metalink-filecoin-adapter package.
 
 This will prompt the user to:
 * accept the snap installation
 * accept all snap permissions
 
-This function accepts the configuration object for defining network properties, the same as configure method from `Filecoin Snap API`. After successful installation, it will return `MetamaskFilecoinSnap` object.
+This function accepts the configuration object for defining network properties, the same as configure method from `Filecoin Snap API`. After successful installation, it will return `MetaLinkFilecoinSnap` object.
 
 ### Invoke Filecoin Snap API
-`MetamaskFilecoinSnap` object has an exposed method for obtaining API `getFilecoinSnapApi`.
+`MetaLinkFilecoinSnap` object has an exposed method for obtaining API `getApi`.
 
 For more details about exposed API see [API documentation](https://github.com/stfil-io/metalink-filecoin/blob/main/packages/types/README.md).

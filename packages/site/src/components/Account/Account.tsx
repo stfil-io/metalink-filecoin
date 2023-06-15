@@ -1,13 +1,13 @@
 import React from "react";
 import {Box, Button, Card, CardContent, CardHeader, Divider, Grid, Typography} from '@material-ui/core/';
-import {FilecoinSnapApi} from "@stfil/metalink-filecoin-types";
+import {MetaLinkFilecoinSnapApi} from "@stfil/metalink-filecoin-types";
 
 export interface AccountProps {
     address: string,
     publicKey: string,
     balance: string,
     balanceChange: boolean,
-    api: FilecoinSnapApi | null
+    api: MetaLinkFilecoinSnapApi | null
 }
 
 export const Account = (props: AccountProps) => {

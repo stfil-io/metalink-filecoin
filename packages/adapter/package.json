@@ -16,7 +16,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "MetaLinkFilecoin adapter is used to install Filecoin snap and expose API toward snap.",
+  "description": "MetaLinkFilecoin adapter is used to install MetaLinkFilecoin snap and expose API toward snap.",
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "yarn run build:lib && yarn run build:types",

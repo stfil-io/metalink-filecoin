@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MetamaskFilecoinSnap = void 0;
+exports.MetaLinkFilecoinSnap = void 0;
 const methods_1 = require("./methods");
-class MetamaskFilecoinSnap {
+class MetaLinkFilecoinSnap {
     constructor(snapOrigin) {
         // eslint-disable-next-line @typescript-eslint/require-await
-        this.getFilecoinSnapApi = async () => {
+        this.getApi = async () => {
             return {
                 calculateGasForMessage: methods_1.calculateGasForMessage.bind(this),
                 configure: methods_1.configure.bind(this),
@@ -23,5 +23,5 @@ class MetamaskFilecoinSnap {
         this.snapId = this.snapOrigin;
     }
 }
-exports.MetamaskFilecoinSnap = MetamaskFilecoinSnap;
+exports.MetaLinkFilecoinSnap = MetaLinkFilecoinSnap;
 //# sourceMappingURL=snap.js.map

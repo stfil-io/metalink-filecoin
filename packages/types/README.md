@@ -2,11 +2,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-MetaLinkFilecoin types defines the `Filecoin Message` and snap interaction `Filecoin Snap API`.
+MetaLinkFilecoin types defines the `Messages` and snap interaction `MetaLinkFilecoin Snap API`.
 
 ## API Documentation
 
-### Filecoin Snap API
+### MetaLinkFilecoin Snap API
 
 <details>
 <summary style="font-weight: bold">configure</summary>
@@ -246,13 +246,13 @@ interface Message {
 ```
 </details>
 
-## Filecoin snap API usage examples
+## MetaLinkFilecoin Snap API usage examples
 
 ### Send message
 
 ```typescript
 // snap is already installed
-const api = await metamaskFilecoinSnap.getFilecoinSnapApi();
+const api = await MetaLinkFilecoinSnap.getApi();
 
 const toAddress = "t1wnanhvadbski2fru4l4kry3x2hqq4jobzzic6dq"
 const amountAttoFIL = "100000"

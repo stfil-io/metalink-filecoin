@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.enableFilecoinSnap = exports.isSnapInstalled = exports.isMetamaskSnapsSupported = exports.hasMetaMask = exports.MetamaskFilecoinSnap = void 0;
+exports.enableMetaLinkFilecoinSnap = exports.isSnapInstalled = exports.isMetamaskSnapsSupported = exports.hasMetaMask = exports.MetaLinkFilecoinSnap = void 0;
 const utils_1 = require("./utils");
 const snap_1 = require("./snap");
 const defaultSnapOrigin = "npm:@stfil/metalink-filecoin";
 var snap_2 = require("./snap");
-Object.defineProperty(exports, "MetamaskFilecoinSnap", { enumerable: true, get: function () { return snap_2.MetamaskFilecoinSnap; } });
+Object.defineProperty(exports, "MetaLinkFilecoinSnap", { enumerable: true, get: function () { return snap_2.MetaLinkFilecoinSnap; } });
 var utils_2 = require("./utils");
 Object.defineProperty(exports, "hasMetaMask", { enumerable: true, get: function () { return utils_2.hasMetaMask; } });
 Object.defineProperty(exports, "isMetamaskSnapsSupported", { enumerable: true, get: function () { return utils_2.isMetamaskSnapsSupported; } });
 Object.defineProperty(exports, "isSnapInstalled", { enumerable: true, get: function () { return utils_2.isSnapInstalled; } });
 /**
- * Install and enable Filecoin snap
+ * Install and enable MetaLinkFilecoin snap
  *
  * Checks for existence of Metamask and version compatibility with snaps before installation.
  *
@@ -21,9 +21,9 @@ Object.defineProperty(exports, "isSnapInstalled", { enumerable: true, get: funct
  * @param config - SnapConfig
  * @param snapOrigin
  *
- * @return MetamaskFilecoinSnap - adapter object that exposes snap API
+ * @return MetaLinkFilecoinSnap - adapter object that exposes snap API
  */
-async function enableFilecoinSnap(config, snapOrigin, snapInstallationParams = {}) {
+async function enableMetaLinkFilecoinSnap(config, snapOrigin, snapInstallationParams = {}) {
     const snapId = snapOrigin !== null && snapOrigin !== void 0 ? snapOrigin : defaultSnapOrigin;
     // check all conditions
     if (!(0, utils_1.hasMetaMask)()) {
@@ -47,11 +47,11 @@ async function enableFilecoinSnap(config, snapOrigin, snapInstallationParams = {
     }
     //await unlockMetamask();
     // create snap describer
-    const snap = new snap_1.MetamaskFilecoinSnap(snapOrigin || defaultSnapOrigin);
+    const snap = new snap_1.MetaLinkFilecoinSnap(snapOrigin || defaultSnapOrigin);
     // set initial configuration
-    await (await snap.getFilecoinSnapApi()).configure(config);
+    await (await snap.getApi()).configure(config);
     // return snap object
     return snap;
 }
-exports.enableFilecoinSnap = enableFilecoinSnap;
+exports.enableMetaLinkFilecoinSnap = enableMetaLinkFilecoinSnap;
 //# sourceMappingURL=index.js.map

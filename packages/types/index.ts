@@ -54,7 +54,7 @@ export interface GetGasForMessageRequest {
   };
 }
 
-export type MetamaskFilecoinRpcRequest =
+export type MetaLinkFilecoinRpcRequest =
   | GetPublicKeyRequest
   | GetAddressRequest
   | ExportSeedRequest
@@ -66,7 +66,7 @@ export type MetamaskFilecoinRpcRequest =
   | SendMessageRequest
   | GetGasForMessageRequest;
 
-type Method = MetamaskFilecoinRpcRequest["method"];
+type Method = MetaLinkFilecoinRpcRequest["method"];
 
 export interface WalletRequestSnapsRequest {
   method: "wallet_requestSnaps";
@@ -79,7 +79,7 @@ export interface GetSnapsRequest {
 
 export interface SnapRpcMethodRequest {
   method: string;
-  params: MetamaskFilecoinRpcRequest;
+  params: MetaLinkFilecoinRpcRequest;
 }
 
 export type MetamaskRpcRequest =
@@ -167,10 +167,7 @@ export interface MessageStatus {
 
 export type FilecoinNetwork = "f" | "t";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface FilecoinEventApi {}
-
-export interface FilecoinSnapApi {
+export interface MetaLinkFilecoinSnapApi {
   getPublicKey(): Promise<string>;
   getAddress(): Promise<string>;
   getBalance(): Promise<string>;

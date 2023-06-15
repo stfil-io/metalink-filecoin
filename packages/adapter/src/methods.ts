@@ -1,6 +1,6 @@
 import {
   MessageStatus,
-  MetamaskFilecoinRpcRequest,
+  MetaLinkFilecoinRpcRequest,
   MessageRequest,
   SignedMessage,
   SignMessageResponse,
@@ -8,10 +8,10 @@ import {
   MessageGasEstimate,
   SignRawMessageResponse,
 } from "@stfil/metalink-filecoin-types";
-import { MetamaskFilecoinSnap } from "./snap";
+import { MetaLinkFilecoinSnap } from "./snap";
 
 async function sendSnapMethod<T>(
-  request: MetamaskFilecoinRpcRequest,
+  request: MetaLinkFilecoinRpcRequest,
   snapId: string
 ): Promise<T> {
   return await window.ethereum.request({
@@ -23,28 +23,28 @@ async function sendSnapMethod<T>(
   });
 }
 
-export async function getAddress(this: MetamaskFilecoinSnap): Promise<string> {
+export async function getAddress(this: MetaLinkFilecoinSnap): Promise<string> {
   return await sendSnapMethod({ method: "fil_getAddress" }, this.snapId);
 }
 
 export async function getPublicKey(
-  this: MetamaskFilecoinSnap
+  this: MetaLinkFilecoinSnap
 ): Promise<string> {
   return await sendSnapMethod({ method: "fil_getPublicKey" }, this.snapId);
 }
 
-export async function getBalance(this: MetamaskFilecoinSnap): Promise<string> {
+export async function getBalance(this: MetaLinkFilecoinSnap): Promise<string> {
   return await sendSnapMethod({ method: "fil_getBalance" }, this.snapId);
 }
 
 export async function exportPrivateKey(
-  this: MetamaskFilecoinSnap
+  this: MetaLinkFilecoinSnap
 ): Promise<string> {
   return await sendSnapMethod({ method: "fil_exportPrivateKey" }, this.snapId);
 }
 
 export async function configure(
-  this: MetamaskFilecoinSnap,
+  this: MetaLinkFilecoinSnap,
   configuration: SnapConfig
 ): Promise<void> {
   return await sendSnapMethod(
@@ -54,7 +54,7 @@ export async function configure(
 }
 
 export async function signMessage(
-  this: MetamaskFilecoinSnap,
+  this: MetaLinkFilecoinSnap,
   message: MessageRequest
 ): Promise<SignMessageResponse> {
   return await sendSnapMethod(
@@ -64,7 +64,7 @@ export async function signMessage(
 }
 
 export async function signMessageRaw(
-  this: MetamaskFilecoinSnap,
+  this: MetaLinkFilecoinSnap,
   rawMessage: string
 ): Promise<SignRawMessageResponse> {
   return await sendSnapMethod(
@@ -74,7 +74,7 @@ export async function signMessageRaw(
 }
 
 export async function sendMessage(
-  this: MetamaskFilecoinSnap,
+  this: MetaLinkFilecoinSnap,
   signedMessage: SignedMessage
 ): Promise<MessageStatus> {
   return await sendSnapMethod(
@@ -84,13 +84,13 @@ export async function sendMessage(
 }
 
 export async function getMessages(
-  this: MetamaskFilecoinSnap
+  this: MetaLinkFilecoinSnap
 ): Promise<MessageStatus[]> {
   return await sendSnapMethod({ method: "fil_getMessages" }, this.snapId);
 }
 
 export async function calculateGasForMessage(
-  this: MetamaskFilecoinSnap,
+  this: MetaLinkFilecoinSnap,
   message: MessageRequest,
   maxFee?: string
 ): Promise<MessageGasEstimate> {

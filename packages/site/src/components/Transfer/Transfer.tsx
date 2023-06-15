@@ -11,12 +11,12 @@ import {
     TextField
 } from '@material-ui/core/';
 import {Alert} from "@material-ui/lab";
-import {FilecoinSnapApi} from "@stfil/metalink-filecoin-types";
+import {MetaLinkFilecoinSnapApi} from "@stfil/metalink-filecoin-types";
 import { attoFilToFil, filToAttoFil } from "../../services/utils";
 
 interface ITransferProps {
     network: string,
-    api: FilecoinSnapApi | null,
+    api: MetaLinkFilecoinSnapApi | null,
     onNewMessageCallback: any
 }
 
