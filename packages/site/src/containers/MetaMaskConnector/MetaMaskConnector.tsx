@@ -83,18 +83,33 @@ export const MetaMaskConnector = () => {
                 <Box mt={"1rem"} />
                 </>}
             {!(!state.hasMetaMask || !!needSnap) && <>
-                <Alert severity="warning">Metamask flask is required to run snap!</Alert>
+                <Alert severity="warning">Metamask flask is required to run snap!
+                </Alert>
+                <Button></Button>
                 <Box mt={"1rem"} />
                 </>}
-            <Button
-                disabled={!state.hasMetaMask || !needSnap}
-                onClick={installSnap}
-                variant="contained"
-                size={"large"}
-                color="primary"
-            >
-                Connect to MetaMask
-            </Button>
+            {
+                !(!state.hasMetaMask || !!needSnap) 
+                ? 
+                <Button
+                    onClick={() => {window.open('https://metamask.io/flask/')}}
+                    variant="contained"
+                    size={"large"}
+                    color="primary"
+                >
+                    Install MetaMask Flask
+                </Button> 
+                : 
+                <Button
+                    disabled={!state.hasMetaMask || !needSnap}
+                    onClick={installSnap}
+                    variant="contained"
+                    size={"large"}
+                    color="primary"
+                >
+                    Connect to MetaMask
+                </Button>
+            }
         </div>
     );
 };

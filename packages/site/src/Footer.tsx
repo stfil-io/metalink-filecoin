@@ -23,10 +23,10 @@ function Footer() {
                 </Box>
             </Grid>
             <Grid style={{}} direction="row" alignItems="flex-end" justifyContent="center" container spacing={3}>
-                <Box m="2rem" height="100%">
+                <Box m="2rem" height="100%" onClick={() => { location.href = 'https://filecoin.io/' }} style={{cursor: 'pointer'}}>
                     <img height={60} src={logo} alt={"Logo"}/>
                 </Box>
-                <Box m="2rem" height="100%">
+                <Box m="2rem" height="100%" onClick={() => { location.href = 'https://stfil.io/' }} style={{cursor: 'pointer'}}>
                     <img height={60} src={stfil_logo} alt={"Node Factory"}/>
                 </Box>
             </Grid>
