@@ -1,6 +1,6 @@
 {
   "name": "@stfil/metalink-filecoin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "(Apache-2.0 AND MIT)",
   "author": "STFIL <info@stfil.io>",
   "description": "MetaLinkFilecoin(plugin) to enable MetaMask users interaction with filecoin dapps.",
@@ -39,7 +39,7 @@
     "@metamask/key-tree": "^7.0.0",
     "@metamask/snaps-types": "^0.32.2",
     "@metamask/snaps-ui": "^0.32.2",
-    "@stfil/metalink-filecoin-types": "workspace:^",
+    "@stfil/metalink-filecoin-types": "^1.0.3",
     "@zondax/filecoin-signing-tools": "0.20.0",
     "buffer": "^6.0.3",
     "deepmerge": "4.2.2",

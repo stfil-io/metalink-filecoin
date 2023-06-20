@@ -3645,13 +3645,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@stfil/metalink-filecoin-adapter@workspace:packages/adapter"
   dependencies:
-    "@stfil/metalink-filecoin-types": "workspace:^"
+    "@stfil/metalink-filecoin-types": ^1.0.3
     eslint: ^8.21.0
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
 
-"@stfil/metalink-filecoin-types@workspace:^, @stfil/metalink-filecoin-types@workspace:packages/types":
+"@stfil/metalink-filecoin-types@^1.0.3, @stfil/metalink-filecoin-types@workspace:^, @stfil/metalink-filecoin-types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@stfil/metalink-filecoin-types@workspace:packages/types"
   languageName: unknown
@@ -3674,7 +3674,7 @@ __metadata:
     "@metamask/snaps-cli": ^0.32.2
     "@metamask/snaps-types": ^0.32.2
     "@metamask/snaps-ui": ^0.32.2
-    "@stfil/metalink-filecoin-types": "workspace:^"
+    "@stfil/metalink-filecoin-types": ^1.0.3
     "@types/ws": ^8.5.4
     "@typescript-eslint/eslint-plugin": ^5.33.0
     "@typescript-eslint/parser": ^5.33.0

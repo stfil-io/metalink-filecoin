@@ -1,6 +1,6 @@
 {
   "name": "@stfil/metalink-filecoin-adapter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./build/index.js",
   "module": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -29,7 +29,7 @@
     "test": "exit 0"
   },
   "dependencies": {
-    "@stfil/metalink-filecoin-types": "workspace:^"
+    "@stfil/metalink-filecoin-types": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "^8.21.0",
