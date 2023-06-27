@@ -18,6 +18,7 @@ import { Wallet } from '../izari-filecoin/wallet'
 import { Transaction } from '../izari-filecoin/transaction'
 import { getFilAddress, getNetworkPrefix } from "../util";
 import { SignatureType } from "../izari-filecoin/artifacts/wallet";
+import {Buffer} from  'buffer';
 
 export async function signMessage(
   snap: SnapsGlobalObject,
@@ -130,10 +131,10 @@ export async function signMessageRaw(
       prompt: `Do you want to sign this message?`,
       textAreaContent: rawMessage,
     });
-
+    const msg = `0x${Buffer.from(rawMessage, 'utf8').toString('hex')}`;
     let sig: string = null;
     if (confirmation) {
-      sig = transactionSignRaw(rawMessage, keypair.privateKey).toString(
+      sig = transactionSignRaw(msg, keypair.privateKey).toString(
         "base64"
       );
     }

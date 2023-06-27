@@ -1,5 +1,4 @@
 import { OnRpcRequestHandler } from '@metamask/snaps-types';
-import { panel, text } from '@metamask/snaps-ui';
 import { EmptyMetamaskState } from './interfaces';
 import { getApi } from "./filecoin/api";
 import { LotusRpcApi } from './filecoin/types';
@@ -46,7 +45,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => 
     });
   }
   
-  let api: LotusRpcApi;
+  let api: LotusRpcApi | undefined = undefined;
   // initialize lotus RPC api if needed
   if (apiDependentMethods.indexOf(request.method) >= 0) {
     api = await getApi(snap);
@@ -69,14 +68,14 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => 
     case "fil_exportPrivateKey":
       return exportPrivateKey(snap);
     case "fil_getBalance": {
-      const balance = await getBalance(snap, api);
+      const balance = await getBalance(snap, api as LotusRpcApi);
       return balance;
     }
     case "fil_getMessages":
       return getMessages(snap);
     case "fil_signMessage":
       isValidSignRequest(request.params);
-      return await signMessage(snap, api, request.params.message);
+      return await signMessage(snap, api as LotusRpcApi, request.params.message);
     case "fil_signMessageRaw":
       if (
         "message" in request.params &&
@@ -88,12 +87,12 @@ export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => 
       }
     case "fil_sendMessage":
       isValidSendRequest(request.params);
-      return await sendMessage(snap, api, request.params.signedMessage);
+      return await sendMessage(snap, api as LotusRpcApi, request.params.signedMessage);
     case "fil_getGasForMessage":
       isValidEstimateGasRequest(request.params);
       return await estimateMessageGas(
         snap,
-        api,
+        api as LotusRpcApi,
         request.params.message,
         request.params.maxFee
       );

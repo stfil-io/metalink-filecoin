@@ -7,7 +7,7 @@
     "url": "https://github.com/stfil-io/metalink-filecoin.git"
   },
   "source": {
-    "shasum": "XeeZJ0kekXPLyTg1CfLAFBkc+sLQ1Ma9pKg+KpHUEVg=",
+    "shasum": "obaygQQ0fe9SyZCNykphk/bQy83fpr1BUAp5TrzqB00=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
