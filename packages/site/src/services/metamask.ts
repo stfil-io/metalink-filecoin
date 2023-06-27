@@ -11,7 +11,7 @@ export async function initiateFilecoinSnap(): Promise<SnapInitializationResponse
     const snapId = defaultSnapOrigin
     try {
         console.log('Attempting to connect to snap...');
-        const MetaLinkFilecoinSnap = await enableMetaLinkFilecoinSnap({network: "f"}, snapId, {version: "latest"});
+        const MetaLinkFilecoinSnap = await enableMetaLinkFilecoinSnap({network: "f"}, snapId, {version: ""});
         isInstalled = true;
         console.log('Snap installed!');
         return {isSnapInstalled: true, snap: MetaLinkFilecoinSnap};

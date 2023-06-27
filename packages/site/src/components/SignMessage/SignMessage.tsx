@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Box, Button, Card, CardContent, CardHeader, Dialog, Grid, TextField} from '@material-ui/core/';
 import {MetaLinkFilecoinSnapApi} from "@stfil/metalink-filecoin-types";
-import toHex from "to-hex";
 
 export interface SignMessageProps {
     api: MetaLinkFilecoinSnapApi | null
@@ -16,8 +15,7 @@ export const SignMessage = (props: SignMessageProps) => {
 
     const onSubmit = async () => {
         if(textFieldValue && props.api) {
-            const rawMessage = toHex(textFieldValue, {addPrefix: true});
-            const sigResponse = await props.api.signMessageRaw(rawMessage);
+            const sigResponse = await props.api.signMessageRaw(textFieldValue);
             if(sigResponse.confirmed && sigResponse.error == null) {
                 alert(`This is signature of your message: ${sigResponse.signature}`);
             }

@@ -131,15 +131,15 @@ export interface MessageSignature {
 }
 
 export interface SignMessageResponse {
-  signedMessage: SignedMessage;
+  signedMessage?: SignedMessage;
   confirmed: boolean;
-  error: Error;
+  error?: Error;
 }
 
 export interface SignRawMessageResponse {
-  signature: string;
+  signature?: string;
   confirmed: boolean;
-  error: Error;
+  error?: Error;
 }
 
 export interface MessageRequest {
