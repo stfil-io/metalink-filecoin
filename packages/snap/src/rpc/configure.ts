@@ -43,7 +43,7 @@ export async function configure(
   const state = (await snap.request({
     method: "snap_manageState",
     params: { operation: "get" },
-  })) as MetamaskState;
+  })) as unknown as MetamaskState;
   state.filecoin.config = configuration;
   await snap.request({
     method: "snap_manageState",

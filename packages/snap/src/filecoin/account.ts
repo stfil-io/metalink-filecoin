@@ -37,7 +37,7 @@ export async function getKeyPair(snap: SnapsGlobalObject): Promise<KeyPair> {
   const extendedPrivateKey = await addressKeyDeriver(Number(addressIndex));
 
   const privateKey = extendedPrivateKey.privateKeyBytes;
-  const privateKeyBuffer = Buffer.from(privateKey).slice(0, 32);
+  const privateKeyBuffer = Buffer.from(privateKey as Uint8Array).subarray(0, 32);
 
   const extendedKey = keyRecover(privateKeyBuffer, !isFilecoinMainnet);
 

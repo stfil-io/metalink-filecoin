@@ -1,6 +1,6 @@
 import { LotusRpcApi } from "../filecoin/types";
-import { Address } from "../izari-filecoin/address";
-import { NetworkPrefix } from "../izari-filecoin/artifacts/address";
+import { Address } from "@stfil/metalink-filecoin-utils";
+import { NetworkPrefix } from "@stfil/metalink-filecoin-utils/build/artifacts/address";
 
 export async function isMainnet(
     api: LotusRpcApi,

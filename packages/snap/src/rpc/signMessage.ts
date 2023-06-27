@@ -14,10 +14,9 @@ import { getKeyPair } from "../filecoin/account";
 import { LotusRpcApi } from "../filecoin/types";
 import { showConfirmationDialog } from "../util/confirmation";
 import { messageCreator } from "../util/messageCreator";
-import { Wallet } from '../izari-filecoin/wallet'
-import { Transaction } from '../izari-filecoin/transaction'
 import { getFilAddress, getNetworkPrefix } from "../util";
-import { SignatureType } from "../izari-filecoin/artifacts/wallet";
+import { Transaction, Wallet } from "@stfil/metalink-filecoin-utils";
+import { SignatureType } from "@stfil/metalink-filecoin-utils/build/artifacts/wallet";
 import {Buffer} from  'buffer';
 
 export async function signMessage(
@@ -96,7 +95,7 @@ export async function signMessage(
       ]),
     });
 
-    let sig: SignedMessage = null
+    let sig: SignedMessage | null = null
     if (confirmation) {
       message.to = toFilAddress
       const accountData = Wallet.recoverAccount(await getNetworkPrefix(api), SignatureType.SECP256K1, keypair.privateKey)
@@ -114,9 +113,9 @@ export async function signMessage(
       sig = {message, signature: {data: signature.Data, type: signature.Type}}
     }
 
-    return { confirmed: confirmation, error: null, signedMessage: sig };
+    return { confirmed: confirmation, signedMessage: sig as SignedMessage};
   } catch (e: unknown) {
-    return { confirmed: false, error: e as Error, signedMessage: null };
+    return { confirmed: false, error: e as Error};
   }
 }
 
@@ -132,15 +131,15 @@ export async function signMessageRaw(
       textAreaContent: rawMessage,
     });
     const msg = `0x${Buffer.from(rawMessage, 'utf8').toString('hex')}`;
-    let sig: string = null;
+    let sig: string = '';
     if (confirmation) {
       sig = transactionSignRaw(msg, keypair.privateKey).toString(
         "base64"
       );
     }
 
-    return { confirmed: confirmation, error: null, signature: sig };
+    return { confirmed: confirmation, signature: sig };
   } catch (e: unknown) {
-    return { confirmed: false, error: e as Error, signature: null };
+    return { confirmed: false, error: e as Error};
   }
 }
