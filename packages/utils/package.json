@@ -1,6 +1,6 @@
 {
   "name": "@stfil/metalink-filecoin-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./build/index.js",
   "module": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -11,7 +11,8 @@
     "filecoin",
     "metamask",
     "snap",
-    "dapp"
+    "dapp",
+    "tools"
   ],
   "publishConfig": {
     "access": "public"

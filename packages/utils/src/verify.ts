@@ -32,7 +32,8 @@ export async function verifyMessage(message: Message | string, signature: string
         const payload = getPayloadSECP256K1(uncompressedPublicKey)
         return (new AddressSecp256k1(networkPrefix ? networkPrefix : NetworkPrefix.Mainnet, payload)).toString()
     } 
-    const messageBuf = Buffer.from(message, 'hex')
+    const msg = `0x${Buffer.from(message, 'utf8').toString('hex')}`;
+    const messageBuf = Buffer.from(msg, 'hex')
     let signatureBuf: Buffer
     if (typeof signature === 'string') {
         // We should have a padding!
