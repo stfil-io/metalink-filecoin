@@ -36,6 +36,7 @@ export const Dashboard = () => {
                 setNetworks(selectedNetwork)
                 setNetwork(selectedNetwork);
                 setMessages(await api.getMessages());
+                window.network = selectedNetwork
             } catch (e) {
                 console.error("Unable to change network", e)
             }
