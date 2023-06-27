@@ -40,7 +40,7 @@
     "@metamask/snaps-types": "^0.32.2",
     "@metamask/snaps-ui": "^0.32.2",
     "@stfil/metalink-filecoin-types": "^1.0.3",
-    "@stfil/metalink-filecoin-utils": "^1.0.1",
+    "@stfil/metalink-filecoin-utils": "^1.0.2",
     "@zondax/filecoin-signing-tools": "0.20.0",
     "buffer": "^6.0.3",
     "deepmerge": "4.2.2",
