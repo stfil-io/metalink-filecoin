@@ -5,7 +5,7 @@ export const filecoinMainnetConfiguration: SnapConfig = {
   network: "f",
   rpc: {
     token: "",
-    url: "https://api.node.glif.io",
+    url: "https://filfox.info/rpc/v1",
   },
   unit: {
     decimals: 6,
@@ -20,7 +20,7 @@ export const filecoinTestnetConfiguration: SnapConfig = {
   network: "t",
   rpc: {
     token: "",
-    url: `https://api.calibration.node.glif.io`,
+    url: `https://calibration.filfox.info/rpc/v1`,
   },
   unit: {
     decimals: 6,

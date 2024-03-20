@@ -48,7 +48,7 @@ export async function enableMetaLinkFilecoinSnap(
     throw new Error("Configuration must at least define network type");
   }
 
-  const isInstalled = await isSnapInstalled(snapId);
+  const isInstalled = await isSnapInstalled(snapId, snapInstallationParams.version as string);
 
   if (!isInstalled) {
     // // enable snap
